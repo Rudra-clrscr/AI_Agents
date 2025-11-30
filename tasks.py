@@ -7,10 +7,8 @@ def define_tasks(destination, duration, budget, preferences):
     
     # 1. Research Task (Researcher Agent)
     research_task = Task(
-        description=f"Conduct a deep, real-time web search for {destination}. Find 5 key historical and food attractions, "
-                    f"current travel advisories, typical costs (food, local transport), and best seasons to visit, "
-                    f"focusing on the user's preferences: {preferences}.",
-        expected_output="A detailed JSON summary of the research findings, including 5 specific, cost-relevant attraction details.",
+        description=f"Search the internet for information about {destination}. Find: 5 key historical sites, 5 food attractions, current travel advisories, typical costs for food and local transport, and best seasons to visit. Focus on {preferences}. Provide a summary with specific details and costs.",
+        expected_output="A detailed summary of research findings including 5 historical sites with costs, 5 food attractions with costs, travel advisories, transport costs, and best seasons.",
         agent=researcher,
         async_execution=False
     )
